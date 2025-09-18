@@ -39,13 +39,8 @@ app.use("/api/address", addressRouter);
 app.use("/api/payment", paymentRouter);
 
 mongoose
-  .connect(
-    "mongodb+srv://hardikvagadiya2003_db_user:9OBYzHkXJBb0ZYw4@cluster0.1sk9lse.mongodb.net/",
-    {
-      dbName: "Ecommerce_App",
-    }
-  )
-  .then(() => console.log("Mongodb Connected Successfully...!"))
+  .connect(process.env.MONGO_URI, { dbName: "Ecommerce_App" })
+  .then(() => console.log("MongoDB Connected Successfully...!"))
   .catch((err) => console.log(err));
 
 const port = process.env.PORT || 3000;

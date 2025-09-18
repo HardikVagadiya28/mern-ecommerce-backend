@@ -7,6 +7,8 @@ import cartRouter from "./Routes/cart.js";
 import cors from "cors";
 import addressRouter from "./Routes/address.js";
 import paymentRouter from "./Routes/payment.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 
